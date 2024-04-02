@@ -1,0 +1,26 @@
+@import url('https://fonts.cdnfonts.com/css/spacetype');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: 'SpaceType', sans-serif;
+}
+
+.text-more-left {
+  margin-left: -110px; /* Ajuste o valor conforme necessário */
+}
+
+.text-more-top {
+
+  margin-top: -20rem;
+
+}
