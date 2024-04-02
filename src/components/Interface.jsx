@@ -107,8 +107,8 @@ const AboutSection =() => {
 
 const skills = [
     {
-        title: "CSS",
-        level: 70,
+        title: "ThreeJS",
+        level: 50,
     },
     {
         title: "Javascript",
@@ -197,7 +197,7 @@ return(
                 ))}
             </div>
         <div>
-            <h2 className="text-4xl mt-10">Linguagens</h2>
+            <h2 className="text-4xl mt-10">Linguas</h2>
             <div className=" mt-8 space-y-4">
                 {languages.map((lng, index) => (
             <div className="w-64" key={index}>
