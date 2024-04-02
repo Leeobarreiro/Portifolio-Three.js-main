@@ -12,9 +12,11 @@ import { framerMotionConfig } from "../config";
 import { Avatar } from "./Avatar";
 import { Office } from "./Office";
 import { Background } from "./Background";
+import { Arena } from "./Arena";
 
 
 export const Experience = (props) => {
+
   const { menuOpened } = props;
   const { viewport } = useThree();
   const data = useScroll();
@@ -35,13 +37,7 @@ export const Experience = (props) => {
 
   const characterContainerAboutRef = useRef();
 
-  const [characterAnimation, setCharacterAnimation] = useState("Typing");
-  useEffect(() => {
-    setCharacterAnimation("Falling");
-    setTimeout(() => {
-      setCharacterAnimation(section === 0 ? "Typing" : "Standing");
-    }, 600);
-  }, [section]);
+  
 
   useFrame((state) => {
     let curSection = Math.floor(data.scroll.current * data.pages);
@@ -60,6 +56,13 @@ export const Experience = (props) => {
     state.camera.lookAt(cameraLookAtX.get(), 0, 3);
 
   });
+
+   // Determina a posição e rotação do Avatar baseado na seção
+   const avatarPosition = section === 1 ? [1, -1.5, -4] : [0, 0, 0];
+   const avatarRotation = section === 1 ? [1, 0, 0] : [0, 0, 0];
+   scale: section === 1 ? [0.3, 0.3, 0.3] : [1, 1, 1] // Ajuste a escala conforme necessário
+
+
   return (
     <>
  <Background />
@@ -103,7 +106,7 @@ export const Experience = (props) => {
           },
         }}
       >
-        <Avatar animation={characterAnimation} />
+        <Avatar position={avatarPosition} rotation={avatarRotation} />
       </motion.group>
       <ambientLight intensity={1} />
       <motion.group
@@ -125,6 +128,7 @@ export const Experience = (props) => {
 
 
       {/* SKILLS */}
+      {section === 1 && (
       <motion.group
         position={[0, -1.5, -10]}
         animate={{
@@ -132,8 +136,11 @@ export const Experience = (props) => {
           y: section === 1 ? -viewport.height : -1.5,
         }}
       >
+        <Arena/>
+        
        
       </motion.group>
+      )}
     </>
   );
 };

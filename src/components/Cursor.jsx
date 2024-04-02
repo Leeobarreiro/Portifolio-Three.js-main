@@ -31,11 +31,7 @@ export const Cursor = () => {
         mouseY = event.pageY;
       }
     );
-    const animateEvent = requestAnimationFrame(animate);
-    return () => {
-      document.removeEventListener("mousemove", mouseEventsListener);
-      cancelAnimationFrame(animateEvent);
-    };
+    
   }, []);
 
   useEffect(() => {

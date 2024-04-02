@@ -30,7 +30,7 @@ function App() {
           <ScrollControls pages={4} damping={0.1}>
             <ScrollManager section={section} onSectionChange={setSection} />
             <Scroll>
-              <Experience section={section} menuOpened={menuOpened} />
+              <Experience section={section}   />
             </Scroll>
             <Scroll html>
               <Interface />

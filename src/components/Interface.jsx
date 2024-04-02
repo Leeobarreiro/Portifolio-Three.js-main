@@ -132,11 +132,11 @@ const skills = [
 const languages = [
 
     {
-        title: "Português",
+        title: "Portugues",
         level: 100,
     },
     {
-        title: "Inglês",
+        title: "Ingles",
         level: 60,
     },
     {
