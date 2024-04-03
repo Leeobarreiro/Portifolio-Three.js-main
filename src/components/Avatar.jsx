@@ -6,6 +6,7 @@ import * as THREE from 'three';
 
 export function Avatar({ sceneType, bounds = { minX: -Infinity, maxX: Infinity, minY: -Infinity, maxY: Infinity, minZ: -Infinity, maxZ: Infinity }, ...props }) {
   const avatarRef = useRef();
+  
   const { nodes, materials } = useGLTF("models/avatar.glb");
   const movement = useKeyboardControls();
 
@@ -34,7 +35,7 @@ export function Avatar({ sceneType, bounds = { minX: -Infinity, maxX: Infinity, 
     forward.applyQuaternion(avatarRef.current.quaternion);
     side.applyQuaternion(avatarRef.current.quaternion);
 
-    if (movement.forward) avatarRef.current.position.addScaledVector(forward, speed);
+    if (movement.forward) avatarRef.current.position.addScaledVector(forward, speed) ;
     if (movement.backward) avatarRef.current.position.addScaledVector(forward, -speed);
     if (movement.left) avatarRef.current.position.addScaledVector(side, -speed);
     if (movement.right) avatarRef.current.position.addScaledVector(side, speed);
