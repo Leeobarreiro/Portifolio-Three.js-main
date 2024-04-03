@@ -1,9 +1,19 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { Avatar } from './Avatar'; // Certifique-se de que o caminho está correto
+
 
 export function Arena(props) {
   const group = useRef()
   const { nodes, materials } = useGLTF('models/arena.glb')
+  const arenaBounds = {
+    minX: -10,
+    maxX: 10,
+    minY: -5, // Ajuste conforme necessário, por exemplo, para o chão e o teto da arena
+    maxY: 5,
+    minZ: -10,
+    maxZ: 10
+};
   
   return (
     <group ref={group} {...props} dispose={null} position={[1, -1.5, 0]}>
@@ -15,6 +25,8 @@ export function Arena(props) {
                 <group name="Lorelei_Gym_GRP">
                   <group name="Floor_GRP">
                     <group name="floor_below">
+                    <Avatar sceneType="arena" bounds={arenaBounds} />
+
                       <mesh
                         name="floor_below_fireRed_loreleiRoom_0"
                         castShadow
@@ -191,6 +203,7 @@ export function Arena(props) {
                       geometry={nodes.misc_fireRed_loreleiRoom_misc_0.geometry}
                       material={materials.fireRed_loreleiRoom_misc}
                     />
+                    
                   </group>
                 </group>
                 <group name="Water_Blend_GRP" />

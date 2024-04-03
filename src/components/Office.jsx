@@ -9,6 +9,8 @@ import * as THREE from "three";
 import { Text } from 'troika-three-text';
 import { extend } from '@react-three/fiber';
 extend({ Text });
+import { Avatar } from './Avatar'; // Certifique-se de que o caminho está correto
+
 
 export function Office(props) {
   const {section} = props;
@@ -18,9 +20,19 @@ export function Office(props) {
   texture.flipY = false;
   texture.encoding = THREE.sRGBEncoding;
 
-
+  const officeBounds = {
+    minX: -5,
+    maxX: 5,
+    minY: 0,
+    maxY: 0,
+    minZ: -5,
+    maxZ: 5
+};
+  
 return (
   <group {...props} dispose={null}>
+                <Avatar sceneType="office" bounds={officeBounds} />
+
     <mesh
       castShadow
       receiveShadow

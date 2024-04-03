@@ -79,7 +79,7 @@ const AboutSection =() => {
             >
                 Trabalho como Desenvolvedor Front-End
                 <br />
-                Também me aventuro pelo mundo Back-End
+                Tambem me aventuro pelo mundo Back-End
             </motion.p>
             <motion.button
             className={` bg-indigo-600 text-white py-4 px-8 
