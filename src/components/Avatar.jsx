@@ -39,6 +39,8 @@ export function Avatar({ sceneType, bounds = { minX: -Infinity, maxX: Infinity, 
     if (movement.left) avatarRef.current.position.addScaledVector(side, -speed);
     if (movement.right) avatarRef.current.position.addScaledVector(side, speed);
 
+    
+
     // Aplica os limites específicos da cena
     avatarRef.current.position.clamp(new THREE.Vector3(bounds.minX, bounds.minY, bounds.minZ), new THREE.Vector3(bounds.maxX, bounds.maxY, bounds.maxZ));
   });
