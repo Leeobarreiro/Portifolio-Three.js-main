@@ -1,4 +1,12 @@
 import { motion } from "framer-motion"
+import { Row, TabContainer, TabContent, TabPane } from "react-bootstrap";
+import { Col, Container, Tab, } from "react-bootstrap"
+import { ProjectCard } from "./ProjectCard";
+import Nav from 'react-bootstrap/Nav';
+import colorSharp2 from "../assets/img/color-sharp2.png"
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 
 const Section = (props) => {
     const {children} = props;
@@ -57,7 +65,7 @@ export const Interface = () => {
     <SkillsSection />
 
     <Section>
-        <h1>Projetos</h1>
+        <Projects />
     </Section>
     
     <ContactSection />
@@ -287,6 +295,65 @@ return(
             </Section>
             );
         };
+
+const Projects = () => {
+    
+    const projects = [
+
+    {   
+        title: "Projeto 1",
+        description: "descrição 1",
+        imgUrl: "imagem"
+    }
+];
+    return (
+    <Section className="project" id="project">
+        <Container>
+            <Row>
+                <Col>  
+                    <h2>Projetos</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis quos sed dolorum mollitia praesentium ad eius culpa ex animi rerum, ea harum optio, sunt asperiores voluptatem. Commodi, aliquam tempora. Nesciunt?</p>
+                    <TabContainer id="project-tabs" defaultActiveKey="first" >
+                        <Nav variant="pills" defaultActiveKey="/home">
+                            <Nav.Item>
+                                <Nav.Link eventKey="first">Tab one</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link eventKey="second">Tab two 2</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link eventKey="third" disabled>
+                                Tab Three
+                                </Nav.Link>
+                            </Nav.Item>
+                        </Nav>
+                        <TabContent>
+                            <TabPane eventKey="first">
+                                <Row>
+                                    {
+                                        projects.map((project, index) => {
+                                        return (
+                                            <ProjectCard
+                                            key={index}
+                                            {...project}
+                                            />
+                                        )
+                                        })
+                                    }
+                                </Row>
+                            </TabPane>
+                            <TabPane eventKey="second">Lorem ipsum</TabPane>
+                            <TabPane eventKey="third">Lorem ipsum</TabPane>
+                        </TabContent>
+                    </TabContainer>    
+                </Col>
+            </Row>
+        </Container>
+        <img className="background-image-right" src={colorSharp2}></img>
+    </Section>
+    )
+}
+
 
 const ContactSection = () => {
 
