@@ -65,6 +65,7 @@ export const Experience = (props) => {
 
   return (
     <>
+    
  <Background />
       <motion.group
         position={[1.9072935059634513, 0.14400000000000002, 2.681801948466054]}
@@ -116,6 +117,7 @@ export const Experience = (props) => {
           y: section === 0 ? 0 : -1,
         }}
       >
+      
         <Office section={section} />
         <group
           ref={characterContainerAboutRef}

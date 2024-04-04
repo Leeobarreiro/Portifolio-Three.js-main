@@ -26,18 +26,33 @@ const Section = (props) => {
 
     >
         {children}
-    
+                
+        
     </motion.section >
+    
     );
 };
+
+const Key = ({ children }) => {
+    return (
+        <motion.div className="key-animation m-2 bg-gray-800 text-white w-10 h-10 flex justify-center items-center rounded"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}>
+            {children}
+        </motion.div>
+    );
+};
+
 
 export const Interface = () => {
 
     return (
         
    <div className="flex flex-col items-center w-screen px-40">
+    
    
-    <AboutSection />
+    <AboutSection/>
+
 
     <SkillsSection />
 
@@ -56,13 +71,15 @@ const AboutSection =() => {
     return(
 
         <Section>
-            <h1 className="text-4xl leading-snug text-more-left">
+            <h1 className="text-4xl leading-snug text-more-left text-more-top ">
                   Seja Bem vindo 
                 <br />
                 <span className=" px-1 italic">ao meu portifolio </span>
                 <br />
                 <span className=" px-1 italic"> animado</span>
             </h1>
+            
+            
             <motion.p className="text-lg text-gray-600 mt-4 text-more-left"
                 initial={{
                     opacity: 0,
@@ -76,7 +93,8 @@ const AboutSection =() => {
                     duration: 1,
                     delay: 1.5,                
                 }}
-            >
+            >   Me chamo Leonardo Barreiro
+                <br />
                 Trabalho como Desenvolvedor Front-End
                 <br />
                 Tambem me aventuro pelo mundo Back-End
@@ -100,10 +118,20 @@ const AboutSection =() => {
             >
                 Entre em contato
             </motion.button>
+            <div className="flex flex-col items-center justify-center w-full mt-8" style={{ transform: 'translateX(-20rem)' }}> {/* Esta linha foi modificada */}
+                <div className="flex justify-center items-center">
+                    <Key>W</Key>
+                </div>
+                <div className="flex justify-center items-center">
+                    <Key>A</Key>
+                    <Key>S</Key>
+                    <Key>D</Key>
+                </div>
+            </div>
         </Section>
 
     )
-}
+}   
 
 const skills = [
     {

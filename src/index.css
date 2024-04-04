@@ -21,6 +21,30 @@ body {
 
 .text-more-top {
 
-  margin-top: -20rem;
+  margin-top: 10rem;
 
+}
+
+
+
+.key-animation {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
 }
