@@ -118,10 +118,10 @@ const AboutSection =() => {
             >
                 Entre em contato
             </motion.button>
-            <div className="flex flex-col items-center justify-center w-full mt-8" style={{ transform: 'translateX(-20rem)' }}> {/* Esta linha foi modificada */}
+            <div className="flex flex-col items-center justify-center w-full mt-8" style={{ transform: 'translateX(-20rem) translateY(-6rem)' }}> {/* Esta linha foi modificada */}
                 <div className="flex justify-center items-center">
                     <Key>W</Key>
-                </div>
+            </div>
                 <div className="flex justify-center items-center">
                     <Key>A</Key>
                     <Key>S</Key>
