@@ -74,9 +74,9 @@ const AboutSection =() => {
             <h1 className="text-4xl leading-snug text-more-left text-more-top ">
                   Seja Bem vindo 
                 <br />
-                <span className=" px-1 italic">ao meu portifolio </span>
+                <span>ao meu portifolio </span>
                 <br />
-                <span className=" px-1 italic"> animado</span>
+                <span> em Pixel Art</span>
             </h1>
             
             
@@ -179,7 +179,7 @@ const SkillsSection = () =>{
 return(
     <Section>
         <motion.div whileInView={"visible"}>
-            <h2 className="text-4xl ">Skills</h2>
+            <h2 className="text-4xl text-more-top ">Skills</h2>
             <div className=" mt-8 space-y-4">
                 {skills.map((skill, index) => (
                     <div className="w-64" key={index}>
@@ -273,7 +273,16 @@ return(
             </div>
             </motion.div>
             
-                
+            <div className="flex flex-col items-center justify-center w-full mt-8" style={{ transform: 'translateX(25rem) translateY(-10rem)' }}>
+                <div className="flex justify-center items-center">
+                    <Key>W</Key>
+            </div>
+                <div className="flex justify-center items-center">
+                    <Key>A</Key>
+                    <Key>S</Key>
+                    <Key>D</Key>
+                </div>
+            </div>
 
             </Section>
             );
