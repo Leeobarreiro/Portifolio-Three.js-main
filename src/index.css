@@ -126,7 +126,22 @@ body {
 }
 
 
-.icon{
+.icon {
+
+  position: fixed; /* Mantém o botão fixo na tela */
+  top: 710px; /* Aumente este valor para baixar o botão */
+  right: 205px; /* Ajuste conforme necessário para a direita */
+  font-family: 'SpaceType', sans-serif; /* Exemplo de fonte pixelada */
+  font-size: 16px; /* Tamanho da fonte */
+  padding: 8px 16px; /* Espaçamento interno */
+  text-align: center; /* Alinhar texto */
+  display: inline-block; /* Tipo de exibição */
+  text-decoration: none; /* Remover sublinhado de links */
+  transform: scale(1.7); /* Escala inicial */
+
+}
+
+.icon2 {
 
   position: fixed; /* Mantém o botão fixo na tela */
   top: 50px; /* Aumente este valor para baixar o botão */

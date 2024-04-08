@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 
 
 
+
 const Section = (props) => {
     const {children} = props;
 
@@ -10,22 +11,7 @@ const Section = (props) => {
     h-screen w-screen p-8 max-w-screen-2x1 mx-auto
     flex flex-col items-start justify-center`}
     
-    initial={{
 
-        opacity: 0,
-        y: 50,
-
-    }}
-
-    whileInView={{
-        opacity: 1,
-        y: 0,
-        transition:{
-            duration: 1,
-            delay: 0.6,
-        }
-
-    }}
 
     >
         {children}
@@ -69,9 +55,7 @@ export const Interface = () => {
 
     <SkillsSection />
 
-    <Section>
-        <p>projeto</p>
-    </Section>
+    <ProjectSection />
     
     <ContactSection />
     
@@ -111,6 +95,7 @@ const AboutSection =() => {
     return(
 
         <Section>
+            
             <button onClick={togglePlay} className="pixel-art-button">
                 {audioRef.current && !audioRef.current.paused ? 'Parar Música' : 'Tocar Música'}
             </button>
@@ -119,7 +104,7 @@ const AboutSection =() => {
                 Seu navegador não suporta o elemento de áudio.
             </audio>
             <div>
-                <img src="/icon_music.svg" alt="Música" className='icon' />
+             <img src="icon_music.svg" alt="Música" className='icon' />
             </div>
             <h1 className="text-4xl leading-snug text-more-left text-more-top">
                   Seja Bem vindo 
@@ -142,7 +127,7 @@ const AboutSection =() => {
                 }}
                 transition={{
                     duration: 1,
-                    delay: 1.5,                
+                    delay: 0.6,                
                 }}
             >   Me chamo Leonardo Barreiro
                 <br />
@@ -164,7 +149,7 @@ const AboutSection =() => {
             }}
             transition={{
                 duration: 1,
-                delay: 2,                
+                delay: 0.6,                
             }}
             >
                 Entre em contato
@@ -265,6 +250,9 @@ return(
                 <source src="src/components/Trainer Battle - Pokémon Red & Blue Extended.mp3" type="audio/mp3" />
                 Seu navegador não suporta o elemento de áudio.
             </audio>
+            <div>
+                <img src="icon_music2.svg" alt="Música" className='icon2' />
+            </div>
         <motion.div whileInView={"visible"}>
             <h2 className="text-4xl text-more-top ">Skills</h2>
             <div className=" mt-8 space-y-4">
@@ -375,6 +363,15 @@ return(
             );
         };
 
+
+const ProjectSection = () => {
+
+    return (
+        <Section>
+            <h1>teste</h1>
+        </Section>
+    )
+}
 
 
 
