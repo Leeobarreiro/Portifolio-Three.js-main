@@ -1,11 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from "framer-motion"
-import { Row, TabContainer, TabContent, TabPane } from "react-bootstrap";
-import { Col, Container, Tab, } from "react-bootstrap"
-import Nav from 'react-bootstrap/Nav';
-import colorSharp2 from "../assets/img/color-sharp2.png"
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+
 
 
 const Section = (props) => {
@@ -123,13 +118,17 @@ const AboutSection =() => {
                 <source src="src/components/Pokemon Blue-Red - Pallet Town.mp3" type="audio/mp3" />
                 Seu navegador não suporta o elemento de áudio.
             </audio>
-            <h1 className="text-4xl leading-snug text-more-left text-more-top ">
+            <div>
+                <img src="/icon_music.svg" alt="Música" className='icon' />
+            </div>
+            <h1 className="text-4xl leading-snug text-more-left text-more-top">
                   Seja Bem vindo 
                 <br />
                 <span>ao meu portifolio </span>
                 <br />
                 <span> em Pixel Art</span>
             </h1>
+            
 
             
             <motion.p className="text-lg text-gray-600 mt-4 text-more-left"
@@ -180,6 +179,10 @@ const AboutSection =() => {
                     <Key>D</Key>
                 </div>
             </div>
+            <h1 className="GUPY">
+                 GUPY ARENA
+                <br />
+            </h1>
         </Section>
 
     )
@@ -255,7 +258,7 @@ const SkillsSection = () =>{
 
 return(
     <Section>
-       <button onClick={togglePlay} className="pixel-art-button2">
+       <button onClick={togglePlay} className="pixel-art-button2">  
                 {audioRef.current && !audioRef.current.paused ? 'Parar Música' : 'Tocar Música'}
             </button>
             <audio ref={audioRef} loop>
