@@ -1,7 +1,7 @@
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from "framer-motion"
 import { Row, TabContainer, TabContent, TabPane } from "react-bootstrap";
 import { Col, Container, Tab, } from "react-bootstrap"
-import { ProjectCard } from "./ProjectCard";
 import Nav from 'react-bootstrap/Nav';
 import colorSharp2 from "../assets/img/color-sharp2.png"
 import Navbar from 'react-bootstrap/Navbar';
@@ -51,13 +51,23 @@ const Key = ({ children }) => {
     );
 };
 
+const MusicContext = React.createContext({
+    currentMusic: null,
+    setCurrentMusic: () => {},
+  });
+
+
 
 export const Interface = () => {
 
+    const [currentMusic, setCurrentMusic] = useState(null);
+
+
     return (
         
-   <div className="flex flex-col items-center w-screen px-40">
-    
+    <MusicContext.Provider value={{ currentMusic, setCurrentMusic }}>
+    <div className="flex flex-col items-center w-screen px-40">
+
    
     <AboutSection/>
 
@@ -65,20 +75,54 @@ export const Interface = () => {
     <SkillsSection />
 
     <Section>
-        <Projects />
+        <p>projeto</p>
     </Section>
     
     <ContactSection />
     
     </div>
+   
+    </MusicContext.Provider>
+
     );
 
 };
 
 const AboutSection =() => {
+    const { currentMusic, setCurrentMusic } = React.useContext(MusicContext);
+    const audioRef = useRef(null);
+
+    const togglePlay = () => {
+        // Pausa a música atual se não for a música desta seção
+        if (currentMusic && currentMusic !== audioRef.current) {
+            currentMusic.pause();
+        }
+        // Toca ou pausa a música desta seção
+        if (audioRef.current.paused) {
+            audioRef.current.play();
+            setCurrentMusic(audioRef.current);
+        } else {
+            audioRef.current.pause();
+        }
+    };
+
+    // Efeito para pausar a música quando a seção é desmontada
+    useEffect(() => {
+        return () => {
+            audioRef.current.pause();
+        };
+    }, []);
+    
     return(
 
         <Section>
+            <button onClick={togglePlay} className="pixel-art-button">
+                {audioRef.current && !audioRef.current.paused ? 'Parar Música' : 'Tocar Música'}
+            </button>
+            <audio ref={audioRef} loop>
+                <source src="src/components/Pokemon Blue-Red - Pallet Town.mp3" type="audio/mp3" />
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
             <h1 className="text-4xl leading-snug text-more-left text-more-top ">
                   Seja Bem vindo 
                 <br />
@@ -86,7 +130,7 @@ const AboutSection =() => {
                 <br />
                 <span> em Pixel Art</span>
             </h1>
-            
+
             
             <motion.p className="text-lg text-gray-600 mt-4 text-more-left"
                 initial={{
@@ -184,8 +228,40 @@ const languages = [
 
 
 const SkillsSection = () =>{
+
+    const { currentMusic, setCurrentMusic } = React.useContext(MusicContext);
+    const audioRef = useRef(null);
+
+    const togglePlay = () => {
+        // Pausa a música atual se não for a música desta seção
+        if (currentMusic && currentMusic !== audioRef.current) {
+            currentMusic.pause();
+        }
+        // Toca ou pausa a música desta seção
+        if (audioRef.current.paused) {
+            audioRef.current.play();
+            setCurrentMusic(audioRef.current);
+        } else {
+            audioRef.current.pause();
+        }
+    };
+
+    // Efeito para pausar a música quando a seção é desmontada
+    useEffect(() => {
+        return () => {
+            audioRef.current.pause();
+        };
+    }, []);
+
 return(
     <Section>
+       <button onClick={togglePlay} className="pixel-art-button2">
+                {audioRef.current && !audioRef.current.paused ? 'Parar Música' : 'Tocar Música'}
+            </button>
+            <audio ref={audioRef} loop>
+                <source src="src/components/Trainer Battle - Pokémon Red & Blue Extended.mp3" type="audio/mp3" />
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
         <motion.div whileInView={"visible"}>
             <h2 className="text-4xl text-more-top ">Skills</h2>
             <div className=" mt-8 space-y-4">
@@ -296,63 +372,7 @@ return(
             );
         };
 
-const Projects = () => {
-    
-    const projects = [
 
-    {   
-        title: "Projeto 1",
-        description: "descrição 1",
-        imgUrl: "imagem"
-    }
-];
-    return (
-    <Section className="project" id="project">
-        <Container>
-            <Row>
-                <Col>  
-                    <h2>Projetos</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis quos sed dolorum mollitia praesentium ad eius culpa ex animi rerum, ea harum optio, sunt asperiores voluptatem. Commodi, aliquam tempora. Nesciunt?</p>
-                    <TabContainer id="project-tabs" defaultActiveKey="first" >
-                        <Nav variant="pills" defaultActiveKey="/home">
-                            <Nav.Item>
-                                <Nav.Link eventKey="first">Tab one</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="second">Tab two 2</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="third" disabled>
-                                Tab Three
-                                </Nav.Link>
-                            </Nav.Item>
-                        </Nav>
-                        <TabContent>
-                            <TabPane eventKey="first">
-                                <Row>
-                                    {
-                                        projects.map((project, index) => {
-                                        return (
-                                            <ProjectCard
-                                            key={index}
-                                            {...project}
-                                            />
-                                        )
-                                        })
-                                    }
-                                </Row>
-                            </TabPane>
-                            <TabPane eventKey="second">Lorem ipsum</TabPane>
-                            <TabPane eventKey="third">Lorem ipsum</TabPane>
-                        </TabContent>
-                    </TabContainer>    
-                </Col>
-            </Row>
-        </Container>
-        <img className="background-image-right" src={colorSharp2}></img>
-    </Section>
-    )
-}
 
 
 const ContactSection = () => {
