@@ -33,7 +33,7 @@ function App() {
               <Experience section={section}   />
             </Scroll>
             <Scroll html>
-              <Interface />
+              <Interface onSectionChange={setSection} />
             </Scroll>
           </ScrollControls>
         </Canvas>

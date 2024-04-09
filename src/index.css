@@ -155,3 +155,75 @@ body {
   transform: scale(1.7); /* Escala inicial */
 
 }
+
+/*.project-card {
+  border: 4px solid #000; 
+  background-color: #fff; 
+  transition: transform 0.3s ease; 
+}*/
+
+.project-card:hover {
+  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.project-card img.project-gif {
+  width: 100%; /* Ajusta a largura da imagem para preencher o contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  max-width: 300px; /* Define uma largura máxima para a imagem */
+  border-radius: 8px; /* Opcional: adiciona bordas arredondadas à imagem */
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px; /* Ajuste o espaçamento conforme necessário */
+  justify-content: center; /* Centraliza os itens na linha se não preencherem todo o espaço */
+
+}
+
+.project-card {
+  flex: 0 1 300px; /* Cresce até 300px, mas não encolhe abaixo disso */
+  /* Ajuste a largura mínima conforme necessário para o tamanho do seu cartão */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens verticalmente */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Opcional: adiciona sombra para destaque */
+  padding: 20px;
+  border-radius: 10px; /* Opcional: bordas arredondadas */
+}
+
+.project-gif {
+  width: 100%; /* Faz o GIF ocupar toda a largura do cartão */
+  height: auto; /* Mantém a proporção do GIF */
+  border-radius: 5px; /* Opcional: bordas arredondadas para o GIF */
+}
+
+.project-info {
+  text-align: center; /* Centraliza o texto dentro do cartão */
+}
+
+.css-project {
+
+width: 100%;
+color: #0c0a0a; /* Cor do texto */
+padding: 8px 450px; /* Espaçamento interno */
+display: flex; /* Tipo de exibição */
+text-decoration: none; /* Remover sublinhado de links */
+margin: 4px 2px; /* Margem externa */
+font-size: 2.25rem;
+line-height: 2.5rem;
+
+}
+
+.css-project2{
+
+  width: 100%;
+color: #d71a1a; /* Cor do texto */
+padding: 8px 340px; /* Espaçamento interno */
+display: flex; /* Tipo de exibição */
+text-decoration: none; /* Remover sublinhado de links */
+margin: 4px 2px; /* Margem externa */
+font-size: 2.25rem;
+line-height: 2.5rem;
+
+}

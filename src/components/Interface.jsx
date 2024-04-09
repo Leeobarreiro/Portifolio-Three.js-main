@@ -364,15 +364,72 @@ return(
         };
 
 
-const ProjectSection = () => {
-
-    return (
-        <Section>
-            <h1>teste</h1>
-        </Section>
-    )
-}
-
+        const ProjectCard = ({ project }) => {
+            return (
+                <div className="project-card">
+                    <img src={project.gif} alt={project.name} className="project-gif" />
+                    <div className="project-info">
+                        <h3>{project.name}</h3>
+                        <p>{project.description}</p>
+                        <a href={project.link} target="_blank" rel="noopener noreferrer">Ver Projeto</a>
+                    </div>
+                </div>
+            );
+        };
+        
+        const ProjectSection = () => {
+            const projects = [
+                {
+                    name: "Projeto 1",
+                    description: "Descrição do Projeto 1",
+                    gif: "/public/gif/1.gif", // Caminho para o arquivo GIF
+                    link: "#!"
+                },
+                {
+                    name: "Projeto 2",
+                    description: "Descrição do Projeto 2",
+                    gif: "/public/gif/4.gif", // Caminho para o arquivo GIF do Projeto 2
+                    link: "#!" // Link para o Projeto 2
+                },
+                {
+                    name: "Projeto 3",
+                    description: "Descrição do Projeto 3",
+                    gif: "/public/gif/3.gif", // Caminho para o arquivo GIF do Projeto 3
+                    link: "#!" // Link para o Projeto 3
+                }
+                // Adicione mais projetos conforme necessário
+            ];
+        
+            return (
+                <Section>
+                    <h1 className="css-project">
+                        Projetos
+                    </h1>
+                    <motion.p className="css-project2"
+                initial={{
+                    opacity: 0,
+                    y: 25,
+                }}
+                whileInView={{
+                    opacity: 1,
+                    y: 0,
+                }}
+                transition={{
+                    duration: 1,
+                    delay: 0.6,                
+                }}
+            >   Imagens Ilustrativas
+            </motion.p>
+                    <div className="projects-grid">
+                        {projects.map((project, index) => (
+                            <ProjectCard key={index} project={project} />
+                        ))}
+                    </div>
+                </Section>
+            );
+        };
+        
+        
 
 
 const ContactSection = () => {
