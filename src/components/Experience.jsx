@@ -138,11 +138,11 @@ export const Experience = (props) => {
         }}
       >
         <Arena/>
-        
-        
        
       </motion.group>
       )}
+
+      
       
     </>
   );
