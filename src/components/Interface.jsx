@@ -432,15 +432,47 @@ return(
         
 
 
-const ContactSection = () => {
+        const ContactSection = () => {
+            // Ref para controlar a reprodução do vídeo
+            const videoRef = useRef(null);
+          
+            // Efeito para iniciar a reprodução quando a seção entra em visão
+            useEffect(() => {
+              // Inicia a reprodução do vídeo quando a seção é carregada
+              const playVideo = async () => {
+                if (videoRef.current) {
+                  try {
+                    await videoRef.current.play();
+                  } catch (err) {
+                    console.error("Erro ao tentar reproduzir o vídeo", err);
+                  }
+                }
+              };
+          
+              playVideo();
+          
+              // Opcional: pausar o vídeo quando a seção sai de visão
+              return () => {
+                if (videoRef.current) {
+                  videoRef.current.pause();
+                }
+              };
+            }, []);
 
     return(
         <Section>
+            <div className='video-css'>
+             {/* Adiciona o vídeo aqui */}
+             <video ref={videoRef} width="100%" loop muted>
+                <source src="/public/animations/video1.mp4" type="video/mp4" />
+                Seu navegador não suporta vídeos.
+            </video>
+            </div>
             <h2 className="text-5xl ">Entre em contato</h2>
             <div className="mt-8 p-8 rounded-md bg-white w-96 max-w-full">
                 <form>
                     <label for="name" className="font-medium text-gray-900 block mb-1">
-                        Name
+                        Nome
                     </label>
                     <input
                     type="text"
@@ -469,7 +501,9 @@ const ContactSection = () => {
                     <button className="bg-indigo-600 text-white py-4 px-8 rounded-lg  text-lg m-16">
                         Enviar
                     </button>
+
                 </form>
+                
             </div>
         </Section>
 

@@ -227,3 +227,16 @@ font-size: 2.25rem;
 line-height: 2.5rem;
 
 }
+
+
+.video-css {
+
+position: absolute;
+width: 300px;
+left: 50rem;
+scale: 4;
+opacity: 1;
+z-index: -1;
+
+
+}
