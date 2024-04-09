@@ -176,8 +176,7 @@ body {
 .projects-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px; /* Ajuste o espaçamento conforme necessário */
-  justify-content: center; /* Centraliza os itens na linha se não preencherem todo o espaço */
+  gap: 120px; /* Ajuste o espaçamento conforme necessário */
 
 }
 
