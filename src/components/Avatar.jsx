@@ -10,6 +10,8 @@ export function Avatar({ sceneType, bounds = { minX: -Infinity, maxX: Infinity, 
   const { nodes, materials } = useGLTF("models/avatar.glb");
   const movement = useKeyboardControls();
 
+  
+
   useFrame(() => {
     if (!avatarRef.current) return;
 
@@ -27,7 +29,7 @@ export function Avatar({ sceneType, bounds = { minX: -Infinity, maxX: Infinity, 
             backward.set(0, 0, 1);
             right.set(1, 0, 0);
             left.set(-1, 0, 0);
-            speed = 0.04;
+            speed = 0.05;
             break;
         case 'arena':
             forward.set(0, 0, -1);
@@ -74,3 +76,4 @@ avatarRef.current.position.add(direction);
 }
 
 useGLTF.preload("models/avatar.glb");
+  
