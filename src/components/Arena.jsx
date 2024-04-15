@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { Avatar } from './Avatar'; // Certifique-se de que o caminho está correto
+import { Cyntia } from './cyntia';
 
 
 export function Arena(props) {
@@ -26,6 +27,7 @@ export function Arena(props) {
                   <group name="Floor_GRP">
                     <group name="floor_below">
                     <Avatar sceneType="arena" bounds={arenaBounds} />
+                    <Cyntia sceneType="arena" />
 
                       <mesh
                         name="floor_below_fireRed_loreleiRoom_0"
@@ -167,13 +169,7 @@ export function Arena(props) {
                     />
                   </group>
                   <group name="ice_pillar_outline">
-                    <mesh
-                      name="ice_pillar_outline_fireRed_loreleiRoom_0"
-                      castShadow
-                      receiveShadow
-                      geometry={nodes.ice_pillar_outline_fireRed_loreleiRoom_0.geometry}
-                      material={materials.fireRed_loreleiRoom}
-                    />
+                    
                   </group>
                   <group name="arena">
                     <mesh

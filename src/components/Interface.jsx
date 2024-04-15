@@ -165,9 +165,12 @@ const AboutSection =() => {
                 </div>
             </div>
             <h1 className="GUPY">
-                 GUPY ARENA
+                 Tech Recruiter
                 <br />
             </h1>
+            <div className='gupy-img'>
+            <img src='public/textures/gupy.png' />
+            </div>
         </Section>
 
     )

@@ -103,9 +103,9 @@ body {
 .GUPY {
 
   position: fixed; /* Mantém o botão fixo na tela */
-  top: 1300px; /* Aumente este valor para baixar o botão */
-  right: 620px; /* Ajuste conforme necessário para a direita */
-  font-family: 'Knockout Punch', sans-serif;
+  top: 850px; /* Aumente este valor para baixar o botão */
+  right: 600px; /* Ajuste conforme necessário para a direita */
+
   color: #0c0a0a; /* Cor do texto */
   font-size: 14px; /* Tamanho da fonte */
   padding: 8px 16px; /* Espaçamento interno */
@@ -115,7 +115,7 @@ body {
   display: flex; /* Tipo de exibição */
   text-decoration: none; /* Remover sublinhado de links */
   margin: 4px 2px; /* Margem externa */
-  transform: scale(2); /* Escala inicial */
+  transform: scale(1.5); /* Escala inicial */
   
 
 }
@@ -237,5 +237,18 @@ scale: 4;
 opacity: 1;
 z-index: -1;
 
+
+}
+
+.gupy-img{
+
+  position: fixed; /* Mantém o botão fixo na tela */
+  top: 1025px; /* Aumente este valor para baixar o botão */
+  right: 0px; /* Ajuste conforme necessário para a direita */
+  padding: 7px 10px; /* Espaçamento interno */
+  display: flex; /* Tipo de exibição */
+  margin: 4px 2px; /* Margem externa */
+  scale: 0.08;
+  
 
 }
