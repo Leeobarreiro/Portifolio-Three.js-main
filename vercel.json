@@ -13,7 +13,7 @@
       "destination": "/public/animations/:path*"
     }
   ],
-  "redirects": [
+  "redirects": [  
     {
       "source": "/old-path/:path*",
       "destination": "/new-path/:path*",
