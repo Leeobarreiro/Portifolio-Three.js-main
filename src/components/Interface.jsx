@@ -100,7 +100,7 @@ const AboutSection =() => {
                 {audioRef.current && !audioRef.current.paused ? 'Parar Música' : 'Tocar Música'}
             </button>
             <audio ref={audioRef} loop>
-                <source src="Pokemon.mp3" type="audio/mp3" />
+                <source src="src/components/Pokemon.mp3" type="audio/mp3" />
                 Seu navegador não suporta o elemento de áudio.
             </audio>
             <div>
@@ -169,7 +169,7 @@ const AboutSection =() => {
                 <br />
             </h1>
             <div className='gupy-img'>
-            <img src='gupy.png' />
+            <img src='public/textures/gupy.png' />
             </div>
         </Section>
 
@@ -250,7 +250,7 @@ return(
                 {audioRef.current && !audioRef.current.paused ? 'Parar Música' : 'Tocar Música'}
             </button>
             <audio ref={audioRef} loop>
-                <source src="Trainer.mp3" type="audio/mp3" />
+                <source src="src/components/Trainer.mp3" type="audio/mp3" />
                 Seu navegador não suporta o elemento de áudio.
             </audio>
             <div>
@@ -385,19 +385,19 @@ return(
                 {
                     name: "Todo - List",
                     description: "Lista de tarefas criada com javascript puro",
-                    gif: "1.gif", // Caminho para o arquivo GIF
+                    gif: "/public/gif/1.gif", // Caminho para o arquivo GIF
                     link: "https://leeobarreiro.github.io/Lista-de-tarefas/"
                 },
                 {
                     name: "Portfolio antigo",
                     description: "Meu primeiro portfolio feito em javascript e css",
-                    gif: "4.gif", // Caminho para o arquivo GIF do Projeto 2
+                    gif: "/public/gif/4.gif", // Caminho para o arquivo GIF do Projeto 2
                     link: "https://leeobarreiro.github.io/Portfolio-Antigo/" // Link para o Projeto 2
                 },
                 {
                     name: "Automacao NFE para Excel",
                     description: "Transformar XML para tabelas de Excel",
-                    gif: "3.gif", // Caminho para o arquivo GIF do Projeto 3
+                    gif: "/public/gif/3.gif", // Caminho para o arquivo GIF do Projeto 3
                     link: "https://github.com/Leeobarreiro/automacao_notafiscal" // Link para o Projeto 3
                 }
                 
@@ -467,7 +467,7 @@ return(
             <div className='video-css'>
              {/* Adiciona o vídeo aqui */}
              <video ref={videoRef} width="100%" loop muted>
-                <source src="video1.mp4" type="video/mp4" />
+                <source src="public/animations/video1.mp4" type="video/mp4" />
                 Seu navegador não suporta vídeos.
             </video>
             </div>
