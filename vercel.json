@@ -1,3 +1,28 @@
 {
-    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "headers": [
+    {
+      "source": "/public/animations/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "max-age=31536000" }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/videos/:path*",
+      "destination": "/public/animations/:path*"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/old-path/:path*",
+      "destination": "/new-path/:path*",
+      "permanent": true
+    }
+  ],
+  "functions": {
+    "api/*": {
+      "maxDuration": 15
+    }
+  }
 }
