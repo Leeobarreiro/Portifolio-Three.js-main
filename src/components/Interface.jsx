@@ -100,7 +100,7 @@ const AboutSection =() => {
                 {audioRef.current && !audioRef.current.paused ? 'Parar Música' : 'Tocar Música'}
             </button>
             <audio ref={audioRef} loop>
-                <source src="src/components/Pokemon.mp3" type="audio/mp3" />
+                <source src="Pokemon.mp3" type="audio/mp3" />
                 Seu navegador não suporta o elemento de áudio.
             </audio>
             <div>
@@ -169,7 +169,7 @@ const AboutSection =() => {
                 <br />
             </h1>
             <div className='gupy-img'>
-            <img src='public/textures/gupy.png' />
+            <img src='gupy.png' />
             </div>
         </Section>
 
@@ -250,7 +250,7 @@ return(
                 {audioRef.current && !audioRef.current.paused ? 'Parar Música' : 'Tocar Música'}
             </button>
             <audio ref={audioRef} loop>
-                <source src="src/components/Trainer.mp3" type="audio/mp3" />
+                <source src="Trainer.mp3" type="audio/mp3" />
                 Seu navegador não suporta o elemento de áudio.
             </audio>
             <div>
@@ -467,7 +467,7 @@ return(
             <div className='video-css'>
              {/* Adiciona o vídeo aqui */}
              <video ref={videoRef} width="100%" loop muted>
-                <source src="public/animations/video1.mp4" type="video/mp4" />
+                <source src="video1.mp4" type="video/mp4" />
                 Seu navegador não suporta vídeos.
             </video>
             </div>
