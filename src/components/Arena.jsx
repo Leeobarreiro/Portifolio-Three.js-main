@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { Avatar } from './Avatar'; // Certifique-se de que o caminho está correto
-import { Cyntia } from './cyntia';
+import { Cyntia } from './Cyntia';
 
 
 export function Arena(props) {
