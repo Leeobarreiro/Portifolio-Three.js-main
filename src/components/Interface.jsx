@@ -100,11 +100,11 @@ const AboutSection =() => {
                 {audioRef.current && !audioRef.current.paused ? 'Parar Música' : 'Tocar Música'}
             </button>
             <audio ref={audioRef} loop>
-                <source src="src/components/Pokemon.mp3" type="audio/mp3" />
+                <source src="/src/components/Pokemon.mp3" type="audio/mp3" />
                 Seu navegador não suporta o elemento de áudio.
             </audio>
             <div>
-             <img src="icon_music.svg" alt="Música" className='icon' />
+             <img src="/icon_music.svg" alt="Música" className='icon' />
             </div>
             <h1 className="text-4xl leading-snug text-more-left text-more-top">
                   Seja Bem vindo 
@@ -250,11 +250,11 @@ return(
                 {audioRef.current && !audioRef.current.paused ? 'Parar Música' : 'Tocar Música'}
             </button>
             <audio ref={audioRef} loop>
-                <source src="src/components/Trainer.mp3" type="audio/mp3" />
+                <source src="/src/components/Trainer.mp3" type="audio/mp3" />
                 Seu navegador não suporta o elemento de áudio.
             </audio>
             <div>
-                <img src="icon_music2.svg" alt="Música" className='icon2' />
+                <img src="/icon_music2.svg" alt="Música" className='icon2' />
             </div>
         <motion.div whileInView={"visible"}>
             <h2 className="text-4xl text-more-top ">Skills</h2>
