@@ -467,7 +467,7 @@ return(
             <div className='video-css'>
              {/* Adiciona o vídeo aqui */}
              <video ref={videoRef} width="100%" loop muted>
-                <source src="dist/animations/video1.mp4" type="video/mp4" />
+                <source src="public/animations/video1.mp4" type="video/mp4" />
                 Seu navegador não suporta vídeos.
             </video>
             </div>
