@@ -385,19 +385,19 @@ return(
                 {
                     name: "Todo - List",
                     description: "Lista de tarefas criada com javascript puro",
-                    gif: "/public/gif/1.gif", // Caminho para o arquivo GIF
+                    gif: "1.gif", // Caminho para o arquivo GIF
                     link: "https://leeobarreiro.github.io/Lista-de-tarefas/"
                 },
                 {
                     name: "Portfolio antigo",
                     description: "Meu primeiro portfolio feito em javascript e css",
-                    gif: "/public/gif/4.gif", // Caminho para o arquivo GIF do Projeto 2
+                    gif: "4.gif", // Caminho para o arquivo GIF do Projeto 2
                     link: "https://leeobarreiro.github.io/Portfolio-Antigo/" // Link para o Projeto 2
                 },
                 {
                     name: "Automacao NFE para Excel",
                     description: "Transformar XML para tabelas de Excel",
-                    gif: "/public/gif/3.gif", // Caminho para o arquivo GIF do Projeto 3
+                    gif: "3.gif", // Caminho para o arquivo GIF do Projeto 3
                     link: "https://github.com/Leeobarreiro/automacao_notafiscal" // Link para o Projeto 3
                 }
                 
