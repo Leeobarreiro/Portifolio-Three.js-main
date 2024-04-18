@@ -19,10 +19,5 @@
       "destination": "/new-path/:path*",
       "permanent": true
     }
-  ],
-  "functions": {
-    "api/*": {
-      "maxDuration": 15
-    }
-  }
+  ]
 }
