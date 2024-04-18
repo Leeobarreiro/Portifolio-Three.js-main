@@ -100,7 +100,7 @@ const AboutSection =() => {
                 {audioRef.current && !audioRef.current.paused ? 'Parar Música' : 'Tocar Música'}
             </button>
             <audio ref={audioRef} loop>
-                <source src="src/components/Pokemon Blue-Red - Pallet Town.mp3" type="audio/mp3" />
+                <source src="src/components/Pokemon.mp3" type="audio/mp3" />
                 Seu navegador não suporta o elemento de áudio.
             </audio>
             <div>
@@ -250,7 +250,7 @@ return(
                 {audioRef.current && !audioRef.current.paused ? 'Parar Música' : 'Tocar Música'}
             </button>
             <audio ref={audioRef} loop>
-                <source src="src/components/Trainer Battle - Pokémon Red & Blue Extended.mp3" type="audio/mp3" />
+                <source src="src/components/Trainer.mp3" type="audio/mp3" />
                 Seu navegador não suporta o elemento de áudio.
             </audio>
             <div>
